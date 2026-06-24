@@ -1,0 +1,45 @@
+{
+  "Home": {
+    "title": "Vietnam Peaks",
+    "tagline": "Cẩm nang leo núi Việt Nam — có cấu trúc, lọc được, song ngữ.",
+    "wip": "Đang xây dựng. Hiện chạy bằng dữ liệu mẫu, chưa kết nối Supabase.",
+    "switchLanguage": "English",
+    "browsePeaks": "Xem danh sách đỉnh →"
+  },
+  "Filters": {
+    "pageTitle": "Đỉnh núi Việt Nam",
+    "pageSubtitle": "{count} đỉnh — lọc theo vùng, tỉnh, độ cao, độ khó, trạng thái",
+    "search": "Tìm theo tên",
+    "searchPlaceholder": "Nhập tên đỉnh…",
+    "region": "Vùng",
+    "province": "Tỉnh",
+    "allProvinces": "Tất cả tỉnh",
+    "elevation": "Độ cao (m)",
+    "difficulty": "Độ khó",
+    "status": "Trạng thái",
+    "apply": "Áp dụng",
+    "reset": "Đặt lại",
+    "results": "{count} kết quả",
+    "sortBy": "Sắp xếp",
+    "noResults": "Không có đỉnh nào khớp bộ lọc.",
+    "osmCredit": "Dữ liệu bản đồ © OpenStreetMap contributors"
+  },
+  "Sort": {
+    "elev_desc": "Độ cao ↓",
+    "elev_asc": "Độ cao ↑",
+    "name": "Tên A–Z",
+    "diff_asc": "Dễ → Khó",
+    "diff_desc": "Khó → Dễ"
+  },
+  "Region": {
+    "north": "Miền Bắc",
+    "central": "Miền Trung",
+    "south": "Miền Nam"
+  },
+  "Status": {
+    "open": "Leo được",
+    "permit": "Cần giấy phép",
+    "restricted": "Hạn chế",
+    "closed": "Tạm đóng"
+  }
+}

@@ -31,7 +31,8 @@ export type Range = Tables<"ranges">;
 export type RangeInsert = TablesInsert<"ranges">;
 export type RangeUpdate = TablesUpdate<"ranges">;
 
-export type Mountain = Tables<"mountains">;
+/** Đỉnh — bỏ cột generated `search_tsv` (app không bao giờ SELECT cột này). */
+export type Mountain = Omit<Tables<"mountains">, "search_tsv">;
 export type MountainInsert = TablesInsert<"mountains">;
 export type MountainUpdate = TablesUpdate<"mountains">;
 

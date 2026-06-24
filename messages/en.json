@@ -1,0 +1,45 @@
+{
+  "Home": {
+    "title": "Vietnam Peaks",
+    "tagline": "A structured, filterable, bilingual guide to Vietnam's mountains.",
+    "wip": "Work in progress. Running on mock data, not yet connected to Supabase.",
+    "switchLanguage": "Tiếng Việt",
+    "browsePeaks": "Browse all peaks →"
+  },
+  "Filters": {
+    "pageTitle": "Mountains of Vietnam",
+    "pageSubtitle": "{count} peaks — filter by region, province, elevation, difficulty, status",
+    "search": "Search by name",
+    "searchPlaceholder": "Type a peak name…",
+    "region": "Region",
+    "province": "Province",
+    "allProvinces": "All provinces",
+    "elevation": "Elevation (m)",
+    "difficulty": "Difficulty",
+    "status": "Status",
+    "apply": "Apply",
+    "reset": "Reset",
+    "results": "{count} results",
+    "sortBy": "Sort",
+    "noResults": "No peaks match these filters.",
+    "osmCredit": "Map data © OpenStreetMap contributors"
+  },
+  "Sort": {
+    "elev_desc": "Elevation ↓",
+    "elev_asc": "Elevation ↑",
+    "name": "Name A–Z",
+    "diff_asc": "Easy → Hard",
+    "diff_desc": "Hard → Easy"
+  },
+  "Region": {
+    "north": "North",
+    "central": "Central",
+    "south": "South"
+  },
+  "Status": {
+    "open": "Open",
+    "permit": "Permit required",
+    "restricted": "Restricted",
+    "closed": "Closed"
+  }
+}
