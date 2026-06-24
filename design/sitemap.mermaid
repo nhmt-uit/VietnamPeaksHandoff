@@ -1,0 +1,31 @@
+graph TD
+  ROOT["🌐 vietnampeaks.com<br/>(/vi · /en)"]
+
+  ROOT --> HOME["🏠 Trang chủ<br/>/"]
+  ROOT --> LIST["⛰️ Danh sách đỉnh + bộ lọc<br/>/nui"]
+  ROOT --> ART["📖 Cẩm nang / Bài viết<br/>/cam-nang"]
+  ROOT --> ABOUT["ℹ️ Giới thiệu<br/>/gioi-thieu"]
+  ROOT --> AUTH["👤 Đăng nhập / Đăng ký<br/>/tai-khoan"]
+
+  LIST --> PEAK["📍 Chi tiết đỉnh<br/>/nui/[slug]"]
+  PEAK --> ROUTE["🥾 Chi tiết cung đường<br/>/nui/[slug]/cung/[route]"]
+  PEAK -.->|cần đăng nhập| UGC["💬 Bình luận + 📷 Ảnh"]
+  ART --> ARTD["📄 Chi tiết bài viết<br/>/cam-nang/[slug]"]
+
+  ADMIN["🔒 Admin (bảo vệ bằng role)<br/>/admin"]
+  ADMIN --> A1["✏️ CRUD đỉnh / cung / waypoint"]
+  ADMIN --> A2["✅ Duyệt bình luận & ảnh"]
+  ADMIN --> A3["🗂️ Quản lý tỉnh / dãy / bài viết"]
+
+  FILTER["🔎 Bộ lọc trên /nui:<br/>vùng · tỉnh · độ cao · độ khó · trạng thái · tìm tên"]
+  LIST -.-> FILTER
+
+  classDef primary fill:#1f6f54,stroke:#10402f,color:#fff;
+  classDef sub fill:#e8f1ec,stroke:#1f6f54,color:#10402f;
+  classDef admin fill:#7a3b2e,stroke:#4a201a,color:#fff;
+  classDef note fill:#f3f1e9,stroke:#c9c2ad,color:#5a513a,stroke-dasharray: 4 3;
+
+  class HOME,LIST,ART,ABOUT,AUTH primary;
+  class PEAK,ROUTE,ARTD,UGC sub;
+  class ADMIN,A1,A2,A3 admin;
+  class FILTER note;

@@ -1,0 +1,182 @@
+<!-- Vietnam Peaks — Wireframe: trang chi tiết đỉnh (low-fidelity) -->
+<style>
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+         color:#2b2b2b; background:#fafafa; line-height:1.5; }
+  .wrap { max-width: 1080px; margin:0 auto; padding:0 16px; }
+  .block { position:relative; border:1px solid #d8d8d8; background:#fff; border-radius:8px; }
+  .ph { background:repeating-linear-gradient(45deg,#f0f0f0,#f0f0f0 8px,#f6f6f6 8px,#f6f6f6 16px);
+        border:1px dashed #bcbcbc; border-radius:6px; display:flex; align-items:center;
+        justify-content:center; color:#8a8a8a; font-size:13px; text-align:center; }
+  .tag { position:absolute; top:6px; right:8px; font-size:10px; letter-spacing:.08em;
+         text-transform:uppercase; color:#a9a9a9; background:#fff; padding:0 4px; }
+  h1 { font-size:30px; margin:.1em 0; }
+  h2 { font-size:18px; margin:0 0 10px; border-bottom:1px solid #eee; padding-bottom:6px; }
+  .muted { color:#888; }
+  .pill { display:inline-block; border:1px solid #cfcfcf; border-radius:999px;
+          padding:2px 10px; font-size:13px; margin:2px 4px 2px 0; color:#444; background:#fff; }
+  .dots span { display:inline-block; width:9px; height:9px; border-radius:50%;
+               border:1px solid #777; margin-right:2px; vertical-align:middle; }
+  .dots .on { background:#555; }
+  .skel { height:11px; background:#ededed; border-radius:4px; margin:7px 0; }
+  .skel.s { width:60%; }
+  /* nav */
+  nav { background:#fff; border-bottom:1px solid #e2e2e2; }
+  .nav { display:flex; align-items:center; gap:12px; padding:12px 0; }
+  .logo { font-weight:700; }
+  .search { flex:1; }
+  .search .ph { height:34px; justify-content:flex-start; padding-left:12px; }
+  .btn { border:1px solid #c2c2c2; border-radius:6px; padding:6px 12px; font-size:13px;
+         background:#fff; color:#333; white-space:nowrap; }
+  .crumb { font-size:13px; color:#8a8a8a; padding:12px 0 4px; }
+  /* hero */
+  .hero { margin-top:8px; overflow:hidden; }
+  .hero .cover { height:240px; border:0; border-bottom:1px solid #e6e6e6; border-radius:8px 8px 0 0; }
+  .hero .body { padding:16px; }
+  .badges { margin-top:8px; }
+  /* facts */
+  .facts { display:grid; grid-template-columns:repeat(6,1fr); gap:10px; margin:14px 0; }
+  .fact { padding:12px; text-align:center; }
+  .fact .k { font-size:11px; color:#999; text-transform:uppercase; letter-spacing:.05em; }
+  .fact .v { font-size:15px; font-weight:600; margin-top:4px; }
+  /* layout */
+  .cols { display:grid; grid-template-columns: 1fr 360px; gap:18px; align-items:start; }
+  .side { position:sticky; top:12px; display:flex; flex-direction:column; gap:12px; }
+  .map { height:300px; position:relative; }
+  .map .pin { position:absolute; left:46%; top:40%; font-size:24px; }
+  .map .trail { position:absolute; inset:0; }
+  .note { padding:12px; font-size:13px; color:#6b5d2e; background:#fbf8ec;
+          border:1px solid #e9e0bf; border-radius:8px; }
+  .section { padding:16px; margin-bottom:16px; }
+  /* route card */
+  .route { border:1px solid #e2e2e2; border-radius:8px; padding:12px; margin-bottom:10px; }
+  .route .top { display:flex; justify-content:space-between; align-items:baseline; }
+  /* photos */
+  .grid4 { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; }
+  .grid4 .ph { height:84px; }
+  /* comments */
+  .cbox .ph { height:64px; justify-content:flex-start; align-items:flex-start; padding:10px; }
+  .comment { border-top:1px solid #eee; padding:10px 0; font-size:14px; }
+  footer { border-top:1px solid #e2e2e2; background:#fff; margin-top:24px; }
+  .foot { display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
+          padding:16px 0; font-size:12px; color:#8a8a8a; }
+  @media (max-width:760px){ .cols{grid-template-columns:1fr} .facts{grid-template-columns:repeat(2,1fr)} .grid4{grid-template-columns:repeat(2,1fr)} .side{position:static} }
+</style>
+
+<nav><div class="wrap nav">
+  <span class="logo">⛰ Vietnam Peaks</span>
+  <span class="search"><span class="ph">Tìm đỉnh núi…</span></span>
+  <span class="btn">VI / EN</span>
+  <span class="btn">Đăng nhập</span>
+</div></nav>
+
+<div class="wrap">
+  <div class="crumb">Trang chủ › Đỉnh núi › Fansipan</div>
+
+  <!-- HERO -->
+  <div class="block hero">
+    <span class="tag">Hero</span>
+    <div class="ph cover">Ảnh bìa đỉnh núi</div>
+    <div class="body">
+      <h1>Fansipan</h1>
+      <div class="muted">Fansipan · Phan Xi Păng — Nóc nhà Đông Dương</div>
+      <div class="badges">
+        <span class="pill">⛰ 3.147 m</span>
+        <span class="pill">📍 Lào Cai</span>
+        <span class="pill">Miền Bắc</span>
+        <span class="pill">● Leo được</span>
+        <span class="pill dots">Độ khó
+          <span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUICK FACTS -->
+  <div class="block facts" style="border:0;background:transparent">
+    <div class="block fact"><div class="k">Độ cao</div><div class="v">3.147 m</div></div>
+    <div class="block fact"><div class="k">Tỉnh</div><div class="v">Lào Cai</div></div>
+    <div class="block fact"><div class="k">Dãy núi</div><div class="v">Hoàng Liên Sơn</div></div>
+    <div class="block fact"><div class="k">Độ khó</div><div class="v">4 / 5</div></div>
+    <div class="block fact"><div class="k">Trạng thái</div><div class="v">Mở</div></div>
+    <div class="block fact"><div class="k">Mùa đẹp</div><div class="v">T10 – T4</div></div>
+  </div>
+
+  <!-- MAIN -->
+  <div class="cols">
+    <!-- LEFT: nội dung -->
+    <div>
+      <div class="block section">
+        <span class="tag">Giới thiệu</span>
+        <h2>Giới thiệu</h2>
+        <div class="skel"></div><div class="skel"></div><div class="skel s"></div>
+      </div>
+
+      <div class="block section">
+        <span class="tag">Cung đường</span>
+        <h2>Cung đường (2)</h2>
+        <div class="route">
+          <div class="top"><strong>Cung Trạm Tôn (Đường mòn)</strong><span class="btn">Xem chi tiết →</span></div>
+          <div style="margin-top:8px">
+            <span class="pill">11 km</span><span class="pill">D+ 1.600 m</span>
+            <span class="pill">2 ngày</span>
+            <span class="pill dots">Độ khó <span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span></span>
+            <span class="pill">Mùa T10–T4</span><span class="pill">Cần porter</span>
+          </div>
+        </div>
+        <div class="route">
+          <div class="top"><strong>Cung Cát Cát</strong><span class="btn">Xem chi tiết →</span></div>
+          <div style="margin-top:8px">
+            <span class="pill">19 km</span><span class="pill">D+ 1.900 m</span>
+            <span class="pill">2–3 ngày</span>
+            <span class="pill dots">Độ khó <span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span></span>
+            <span class="pill">Cần guide</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="block section">
+        <span class="tag">Cộng đồng</span>
+        <h2>Ảnh từ cộng đồng</h2>
+        <div class="grid4">
+          <div class="ph">Ảnh</div><div class="ph">Ảnh</div><div class="ph">Ảnh</div><div class="ph">Ảnh</div>
+        </div>
+        <div style="margin-top:10px"><span class="btn">+ Đăng ảnh (cần đăng nhập)</span></div>
+      </div>
+
+      <div class="block section cbox">
+        <span class="tag">Bình luận</span>
+        <h2>Bình luận</h2>
+        <div class="ph">Đăng nhập để viết bình luận…</div>
+        <div class="comment"><strong>Minh</strong> <span class="muted">· 05/2026</span>
+          <div class="skel"></div><div class="skel s"></div></div>
+        <div class="comment"><strong>An</strong> <span class="muted">· 04/2026</span>
+          <div class="skel"></div></div>
+      </div>
+    </div>
+
+    <!-- RIGHT: bản đồ + an toàn (sticky) -->
+    <div class="side">
+      <div class="block">
+        <span class="tag">Bản đồ (Leaflet)</span>
+        <div class="ph map">
+          <svg class="trail" viewBox="0 0 360 300" preserveAspectRatio="none">
+            <path d="M70,250 C120,200 160,210 200,150 S250,120 300,90"
+                  fill="none" stroke="#9aa0a6" stroke-width="2.5" stroke-dasharray="6 5"/>
+          </svg>
+          <span class="pin">📍</span>
+          <span style="position:absolute;bottom:8px;left:8px;font-size:12px;color:#8a8a8a">
+            Đỉnh + cung đường + waypoint
+          </span>
+        </div>
+      </div>
+      <div class="note">⚠ Thông tin chỉ để tham khảo. Hãy kiểm tra điều kiện thực tế &amp; quy định
+        trước khi đi.<br><span class="muted">Cập nhật lần cuối: 06/2026</span></div>
+    </div>
+  </div>
+</div>
+
+<footer><div class="wrap foot">
+  <span>© Vietnam Peaks</span>
+  <span>Dữ liệu bản đồ © OpenStreetMap contributors</span>
+  <span>VI / EN</span>
+</div></footer>

@@ -1,0 +1,112 @@
+erDiagram
+    RANGES ||--o{ MOUNTAINS : "groups"
+    MOUNTAINS ||--o{ MOUNTAIN_PROVINCES : ""
+    PROVINCES ||--o{ MOUNTAIN_PROVINCES : ""
+    MOUNTAINS ||--o{ ROUTES : "has"
+    ROUTES ||--o{ WAYPOINTS : "has"
+    MOUNTAINS ||--o{ ARTICLES : "optional"
+    PROFILES ||--o{ COMMENTS : "writes"
+    PROFILES ||--o{ PHOTOS : "uploads"
+    MOUNTAINS ||--o{ COMMENTS : "receives"
+    ROUTES ||--o{ COMMENTS : "receives"
+    MOUNTAINS ||--o{ PHOTOS : "receives"
+    ROUTES ||--o{ PHOTOS : "receives"
+
+    PROVINCES {
+        uuid id PK
+        string name_vi
+        string name_en
+        string slug
+        string_array aliases "old province names"
+    }
+    RANGES {
+        uuid id PK
+        string name_vi
+        string name_en
+        string slug
+    }
+    MOUNTAINS {
+        uuid id PK
+        uuid range_id FK
+        string name_vi
+        string name_en
+        string slug
+        int elevation_m
+        float lat
+        float lng
+        string region "north|central|south"
+        string status "open|restricted|permit|closed"
+        int rank "nullable, e.g. 3rd highest"
+        text summary_vi
+        text summary_en
+        string cover_image_url
+        timestamp last_verified_at
+    }
+    MOUNTAIN_PROVINCES {
+        uuid mountain_id FK
+        uuid province_id FK
+    }
+    ROUTES {
+        uuid id PK
+        uuid mountain_id FK
+        string name_vi
+        string name_en
+        string slug
+        string start_point
+        string end_point
+        float distance_km
+        int elevation_gain_m
+        float duration_days
+        int difficulty_level "1..5"
+        string best_season
+        bool permit_required
+        bool guide_required
+        string gpx_url
+        string audience "beginner|intermediate|advanced"
+        timestamp last_verified_at
+    }
+    WAYPOINTS {
+        uuid id PK
+        uuid route_id FK
+        string name_vi
+        string name_en
+        string type "camp|water|viewpoint|marker|gate"
+        float lat
+        float lng
+        text notes_vi
+        text notes_en
+    }
+    ARTICLES {
+        uuid id PK
+        uuid mountain_id FK "nullable"
+        string title_vi
+        string title_en
+        string slug
+        text body_vi
+        text body_en
+        string type "guide|gear|safety|general"
+    }
+    PROFILES {
+        uuid id PK "= auth.users.id"
+        string display_name
+        string avatar_url
+    }
+    COMMENTS {
+        uuid id PK
+        uuid user_id FK
+        uuid mountain_id FK "nullable"
+        uuid route_id FK "nullable"
+        text body
+        string status "pending|approved|rejected"
+        timestamp created_at
+    }
+    PHOTOS {
+        uuid id PK
+        uuid user_id FK
+        uuid mountain_id FK "nullable"
+        uuid route_id FK "nullable"
+        string url
+        string caption
+        string status "pending|approved|rejected"
+        timestamp created_at
+    }

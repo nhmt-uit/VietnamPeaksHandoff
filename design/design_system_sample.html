@@ -1,0 +1,145 @@
+<!-- Vietnam Peaks — Design System (bản mẫu trực quan) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest-900:#10402f; --forest-700:#1f6f54; --forest-500:#2f9b74; --forest-100:#e6f1ec;
+    --stone-900:#262a28; --stone-600:#5c635f; --stone-300:#c7ccc8;
+    --mist:#f5f7f5; --surface:#ffffff; --clay:#c2622d; --gold:#c9912b;
+    --d1:#4a9d6a; --d2:#8fb43f; --d3:#d8a72b; --d4:#d2762a; --d5:#b1402e;
+    --open:#2f9b74; --permit:#c9912b; --restricted:#d2762a; --closed:#9a3b2e;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--mist); color:var(--stone-900);
+       font-family:"Be Vietnam Pro",system-ui,sans-serif; line-height:1.55;}
+  .wrap{max-width:980px; margin:0 auto; padding:28px 20px 60px;}
+  h1,h2,h3,.serif{font-family:"Lora",Georgia,serif;}
+  h1{font-size:34px; color:var(--forest-900); margin:0 0 4px;}
+  .sub{color:var(--stone-600); margin-bottom:28px;}
+  section{background:var(--surface); border:1px solid #e5e9e6; border-radius:14px;
+          padding:22px; margin-bottom:20px;}
+  h2{font-size:13px; text-transform:uppercase; letter-spacing:.12em; color:var(--stone-600);
+     margin:0 0 16px;}
+  /* palette */
+  .sw{display:grid; grid-template-columns:repeat(auto-fill,minmax(120px,1fr)); gap:10px;}
+  .chip{border-radius:10px; overflow:hidden; border:1px solid #e5e9e6;}
+  .chip .c{height:54px;} .chip .l{font-size:11px; padding:6px 8px; color:var(--stone-600);}
+  .chip .l b{display:block; color:var(--stone-900); font-size:12px;}
+  .ramp{display:flex; gap:6px; align-items:center; margin-top:6px;}
+  .ramp .d{width:34px; height:34px; border-radius:8px; display:flex; align-items:center;
+           justify-content:center; color:#fff; font-weight:600; font-size:13px;}
+  /* type */
+  .spec .big{font-family:"Lora",serif; font-size:30px; font-weight:600; color:var(--forest-900);}
+  .spec .lead{font-size:17px; color:var(--stone-900);}
+  .spec .body{font-size:15px; color:var(--stone-600);}
+  .spec .cap{font-size:12px; text-transform:uppercase; letter-spacing:.08em; color:var(--stone-600);}
+  .spec > div{padding:8px 0; border-bottom:1px dashed #e5e9e6;}
+  /* components */
+  .row{display:flex; flex-wrap:wrap; gap:10px; align-items:center;}
+  .pill{display:inline-flex; align-items:center; gap:6px; border:1px solid var(--stone-300);
+        border-radius:999px; padding:3px 11px; font-size:13px; color:var(--stone-900); background:#fff;}
+  .badge{border:0; color:#fff; border-radius:999px; padding:3px 11px; font-size:12px; font-weight:500;}
+  .dots span{width:9px; height:9px; border-radius:50%; display:inline-block; margin-right:3px;
+             background:var(--stone-300);} 
+  .btn{border-radius:9px; padding:9px 16px; font-size:14px; font-weight:600; cursor:pointer; border:1px solid transparent;}
+  .btn.primary{background:var(--forest-700); color:#fff;}
+  .btn.ghost{background:#fff; color:var(--forest-700); border-color:var(--forest-700);}
+  .btn.accent{background:var(--clay); color:#fff;}
+  /* peak card */
+  .card{width:260px; background:#fff; border:1px solid #e5e9e6; border-radius:14px; overflow:hidden;}
+  .card .thumb{height:130px; background:
+      linear-gradient(160deg,#cfe0d8,#9fc3b1 60%,#7a9c8c);
+      position:relative;}
+  .card .elev{position:absolute; top:10px; left:10px; background:rgba(16,64,47,.85); color:#fff;
+              font-size:12px; font-weight:600; padding:3px 9px; border-radius:999px;}
+  .card .st{position:absolute; top:10px; right:10px;}
+  .card .b{padding:12px 14px 14px;}
+  .card .nm{font-family:"Lora",serif; font-weight:600; font-size:18px; color:var(--forest-900);}
+  .card .en{font-size:12px; color:var(--stone-600); margin-bottom:8px;}
+</style>
+
+<div class="wrap">
+  <h1>Vietnam Peaks — Hệ thống thiết kế</h1>
+  <div class="sub serif">Cảm hứng núi rừng: xanh rêu · xám đá · nền mây · điểm nhấn đất nung</div>
+
+  <!-- PALETTE -->
+  <section>
+    <h2>Bảng màu</h2>
+    <div class="sw">
+      <div class="chip"><div class="c" style="background:var(--forest-900)"></div><div class="l"><b>Forest 900</b>#10402f</div></div>
+      <div class="chip"><div class="c" style="background:var(--forest-700)"></div><div class="l"><b>Forest 700 · primary</b>#1f6f54</div></div>
+      <div class="chip"><div class="c" style="background:var(--forest-500)"></div><div class="l"><b>Forest 500</b>#2f9b74</div></div>
+      <div class="chip"><div class="c" style="background:var(--forest-100)"></div><div class="l"><b>Forest 100</b>#e6f1ec</div></div>
+      <div class="chip"><div class="c" style="background:var(--stone-900)"></div><div class="l"><b>Stone 900 · text</b>#262a28</div></div>
+      <div class="chip"><div class="c" style="background:var(--stone-600)"></div><div class="l"><b>Stone 600</b>#5c635f</div></div>
+      <div class="chip"><div class="c" style="background:var(--stone-300)"></div><div class="l"><b>Stone 300</b>#c7ccc8</div></div>
+      <div class="chip"><div class="c" style="background:var(--mist)"></div><div class="l"><b>Mist · nền</b>#f5f7f5</div></div>
+      <div class="chip"><div class="c" style="background:var(--clay)"></div><div class="l"><b>Clay · nhấn</b>#c2622d</div></div>
+      <div class="chip"><div class="c" style="background:var(--gold)"></div><div class="l"><b>Gold · nhấn phụ</b>#c9912b</div></div>
+    </div>
+
+    <div style="margin-top:18px"><b style="font-size:13px">Dải màu độ khó (1 → 5)</b>
+      <div class="ramp">
+        <div class="d" style="background:var(--d1)">1</div>
+        <div class="d" style="background:var(--d2)">2</div>
+        <div class="d" style="background:var(--d3)">3</div>
+        <div class="d" style="background:var(--d4)">4</div>
+        <div class="d" style="background:var(--d5)">5</div>
+        <span style="color:var(--stone-600); font-size:13px; margin-left:6px">dễ → rất khó</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- TYPOGRAPHY -->
+  <section class="spec">
+    <h2>Chữ — Lora (tiêu đề) + Be Vietnam Pro (nội dung)</h2>
+    <div><span class="cap">Hero / H1 · Lora 600</span><div class="big">Fansipan — Nóc nhà Đông Dương</div></div>
+    <div><span class="cap">Lead · Be Vietnam Pro 500</span><div class="lead">Đỉnh cao 3.147 m, cung đường rừng đỗ quyên ngút ngàn mây.</div></div>
+    <div><span class="cap">Body · Be Vietnam Pro 400</span><div class="body">Chữ tiếng Việt hiển thị đầy đủ dấu: ạ ả ấ ầ ẫ ộ ợ ử ữ ỳ ỹ đĐ — gọn gàng, dễ đọc trên cả mobile.</div></div>
+  </section>
+
+  <!-- COMPONENTS -->
+  <section>
+    <h2>Thành phần</h2>
+
+    <div style="margin-bottom:6px"><b style="font-size:13px">Badge trạng thái</b></div>
+    <div class="row" style="margin-bottom:16px">
+      <span class="badge" style="background:var(--open)">Leo được</span>
+      <span class="badge" style="background:var(--permit)">Cần giấy phép</span>
+      <span class="badge" style="background:var(--restricted)">Hạn chế</span>
+      <span class="badge" style="background:var(--closed)">Tạm đóng</span>
+    </div>
+
+    <div style="margin-bottom:6px"><b style="font-size:13px">Độ khó (chấm theo dải màu)</b></div>
+    <div class="row" style="margin-bottom:16px">
+      <span class="pill">Độ khó
+        <span class="dots"><span style="background:var(--d1)"></span><span style="background:var(--d2)"></span><span style="background:var(--d3)"></span><span></span><span></span></span> 3/5</span>
+      <span class="pill">⛰ 3.147 m</span><span class="pill">📍 Lào Cai</span>
+    </div>
+
+    <div style="margin-bottom:6px"><b style="font-size:13px">Nút</b></div>
+    <div class="row" style="margin-bottom:22px">
+      <span class="btn primary">Xem cung đường</span>
+      <span class="btn ghost">Lọc</span>
+      <span class="btn accent">Đăng ảnh</span>
+    </div>
+
+    <div style="margin-bottom:8px"><b style="font-size:13px">Thẻ đỉnh (đã tô màu)</b></div>
+    <div class="row">
+      <div class="card">
+        <div class="thumb"><span class="elev">3.147 m</span>
+          <span class="st"><span class="badge" style="background:var(--open)">Leo được</span></span></div>
+        <div class="b"><div class="nm">Fansipan</div><div class="en">Phan Xi Păng · Lào Cai</div>
+          <span class="pill">Độ khó <span class="dots"><span style="background:var(--d1)"></span><span style="background:var(--d2)"></span><span style="background:var(--d3)"></span><span style="background:var(--d4)"></span><span></span></span> 4/5</span></div>
+      </div>
+      <div class="card">
+        <div class="thumb" style="background:linear-gradient(160deg,#e3d3bf,#cDB48f 60%,#b1402e)">
+          <span class="elev">3.083 m</span>
+          <span class="st"><span class="badge" style="background:var(--permit)">Cần giấy phép</span></span></div>
+        <div class="b"><div class="nm">Pu Si Lung</div><div class="en">Lai Châu</div>
+          <span class="pill">Độ khó <span class="dots"><span style="background:var(--d1)"></span><span style="background:var(--d2)"></span><span style="background:var(--d3)"></span><span style="background:var(--d4)"></span><span style="background:var(--d5)"></span></span> 5/5</span></div>
+      </div>
+    </div>
+  </section>
+</div>

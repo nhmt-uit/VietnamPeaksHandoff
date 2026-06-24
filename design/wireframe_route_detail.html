@@ -1,0 +1,146 @@
+<!-- Vietnam Peaks — Wireframe: chi tiết cung đường (low-fidelity) -->
+<style>
+  *{box-sizing:border-box;}
+  body{margin:0; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+       color:#2b2b2b; background:#fafafa; line-height:1.5;}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 16px;}
+  .block{position:relative; border:1px solid #d8d8d8; background:#fff; border-radius:8px;}
+  .tag{position:absolute; top:6px; right:8px; font-size:10px; letter-spacing:.08em;
+       text-transform:uppercase; color:#a9a9a9; background:#fff; padding:0 4px;}
+  .ph{background:repeating-linear-gradient(45deg,#f0f0f0,#f0f0f0 8px,#f6f6f6 8px,#f6f6f6 16px);
+      border:1px dashed #bcbcbc; border-radius:6px; display:flex; align-items:center;
+      justify-content:center; color:#8a8a8a; font-size:13px;}
+  .muted{color:#888;} h1{font-size:26px; margin:.1em 0;} h2{font-size:18px; margin:0 0 10px;
+      border-bottom:1px solid #eee; padding-bottom:6px;}
+  .pill{display:inline-block; border:1px solid #cfcfcf; border-radius:999px; padding:2px 10px;
+        font-size:12px; margin:2px 4px 2px 0; color:#444; background:#fff;}
+  .dots span{display:inline-block; width:9px; height:9px; border-radius:50%; border:1px solid #777;
+        margin-right:2px; vertical-align:middle;} .dots .on{background:#555;}
+  .skel{height:11px; background:#ededed; border-radius:4px; margin:7px 0;} .skel.s{width:55%;}
+  .btn{border:1px solid #c2c2c2; border-radius:6px; padding:6px 12px; font-size:13px; background:#fff; color:#333;}
+  nav{background:#fff; border-bottom:1px solid #e2e2e2;}
+  .nav{display:flex; align-items:center; gap:12px; padding:12px 0;}
+  .logo{font-weight:700;} .search{flex:1;} .search .ph{height:34px; justify-content:flex-start; padding-left:12px;}
+  .crumb{font-size:13px; color:#8a8a8a; padding:12px 0 4px;}
+  .section{padding:16px; margin-bottom:16px;}
+  /* map + elevation */
+  .map{height:300px; position:relative; margin-bottom:14px;}
+  .map .pin{position:absolute; font-size:22px;} .map .start{left:14%; bottom:18%;} .map .end{right:20%; top:18%;}
+  .map .wp{position:absolute; font-size:14px; color:#777;}
+  .elev{height:140px; position:relative;}
+  /* facts */
+  .facts{display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin:14px 0;}
+  .fact{padding:12px;} .fact .k{font-size:11px; color:#999; text-transform:uppercase; letter-spacing:.05em;}
+  .fact .v{font-size:15px; font-weight:600; margin-top:4px;}
+  /* waypoints timeline */
+  .wpitem{display:flex; gap:12px; padding:10px 0; border-bottom:1px solid #f0f0f0;}
+  .wpitem .km{width:54px; color:#888; font-size:13px; flex:none;}
+  .wpitem .ty{flex:none;}
+  .grid4{display:grid; grid-template-columns:repeat(4,1fr); gap:8px;} .grid4 .ph{height:84px;}
+  .comment{border-top:1px solid #eee; padding:10px 0; font-size:14px;}
+  .note{padding:12px; font-size:13px; color:#6b5d2e; background:#fbf8ec; border:1px solid #e9e0bf; border-radius:8px;}
+  footer{border-top:1px solid #e2e2e2; background:#fff; margin-top:24px;}
+  .foot{display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; padding:16px 0; font-size:12px; color:#8a8a8a;}
+  @media (max-width:760px){ .facts{grid-template-columns:repeat(2,1fr)} .grid4{grid-template-columns:repeat(2,1fr)} }
+</style>
+
+<nav><div class="wrap nav">
+  <span class="logo">⛰ Vietnam Peaks</span>
+  <span class="search"><span class="ph">Tìm đỉnh núi…</span></span>
+  <span class="btn">VI / EN</span><span class="btn">Đăng nhập</span>
+</div></nav>
+
+<div class="wrap">
+  <div class="crumb">Trang chủ › Đỉnh núi › <u>Fansipan</u> › Cung Trạm Tôn</div>
+
+  <!-- HEADER -->
+  <div class="block section">
+    <span class="tag">Header cung</span>
+    <h1>Cung Trạm Tôn (Đường mòn)</h1>
+    <div class="muted">Tram Ton route · thuộc đỉnh <u>Fansipan</u> (3.147 m)</div>
+    <div style="margin-top:8px">
+      <span class="pill">11 km</span><span class="pill">D+ 1.600 m</span><span class="pill">2 ngày</span>
+      <span class="pill dots">Độ khó <span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span></span>
+      <span class="pill">Phù hợp: trung bình</span><span class="pill">Mùa T10–T4</span>
+      <span class="pill">Cần porter</span>
+    </div>
+  </div>
+
+  <!-- MAP -->
+  <div class="block section">
+    <span class="tag">Bản đồ (Leaflet) — cung + waypoint</span>
+    <div class="ph map">
+      <svg viewBox="0 0 1040 300" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%">
+        <path d="M150,250 C300,210 380,210 520,150 S760,90 900,70" fill="none"
+              stroke="#9aa0a6" stroke-width="3" stroke-dasharray="7 5"/>
+      </svg>
+      <span class="pin start">🟢</span><span class="pin end">🏁</span>
+      <span class="wp" style="left:38%; top:54%;">⛺ Lán</span>
+      <span class="wp" style="left:55%; top:42%;">💧 Nước</span>
+      <span class="wp" style="left:74%; top:28%;">📷 Ngắm</span>
+    </div>
+
+    <!-- ELEVATION PROFILE -->
+    <div class="ph elev">
+      <svg viewBox="0 0 1040 140" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%">
+        <polyline points="0,120 150,108 320,80 520,52 720,40 900,22 1040,18"
+                  fill="rgba(150,150,150,.12)" stroke="#9aa0a6" stroke-width="2"/>
+      </svg>
+      <span style="position:absolute; left:10px; top:8px; font-size:12px; color:#8a8a8a">
+        Biểu đồ độ cao (Recharts) — từ GPX</span>
+    </div>
+  </div>
+
+  <!-- FACTS -->
+  <div class="block facts" style="border:0;background:transparent">
+    <div class="block fact"><div class="k">Xuất phát</div><div class="v">Trạm Tôn</div></div>
+    <div class="block fact"><div class="k">Kết thúc</div><div class="v">Đỉnh Fansipan</div></div>
+    <div class="block fact"><div class="k">Quãng đường</div><div class="v">11 km</div></div>
+    <div class="block fact"><div class="k">Tổng leo (D+)</div><div class="v">1.600 m</div></div>
+    <div class="block fact"><div class="k">Thời gian</div><div class="v">2 ngày</div></div>
+    <div class="block fact"><div class="k">Độ khó</div><div class="v">4 / 5</div></div>
+    <div class="block fact"><div class="k">Mùa đẹp</div><div class="v">T10 – T4</div></div>
+    <div class="block fact"><div class="k">Yêu cầu</div><div class="v">Porter</div></div>
+  </div>
+
+  <!-- DESCRIPTION -->
+  <div class="block section">
+    <span class="tag">Mô tả cung (routes.description)</span>
+    <h2>Mô tả cung đường</h2>
+    <div class="skel"></div><div class="skel"></div><div class="skel s"></div>
+  </div>
+
+  <!-- WAYPOINTS -->
+  <div class="block section">
+    <span class="tag">Waypoints</span>
+    <h2>Điểm mốc trên đường</h2>
+    <div class="wpitem"><span class="km">0 km</span><span class="ty"><span class="pill">🟢 Xuất phát</span></span>
+      <span>Trạm Tôn (1.940 m)</span></div>
+    <div class="wpitem"><span class="km">4 km</span><span class="ty"><span class="pill">💧 Nguồn nước</span></span>
+      <span>Suối — điểm tiếp nước cuối</span></div>
+    <div class="wpitem"><span class="km">7 km</span><span class="ty"><span class="pill">⛺ Lán trại</span></span>
+      <span>Lán 2.800 m — nghỉ đêm</span></div>
+    <div class="wpitem"><span class="km">9 km</span><span class="ty"><span class="pill">📷 Điểm ngắm</span></span>
+      <span>Sống núi — biển mây buổi sáng</span></div>
+    <div class="wpitem"><span class="km">11 km</span><span class="ty"><span class="pill">🏁 Đỉnh</span></span>
+      <span>Chóp inox Fansipan 3.147 m</span></div>
+  </div>
+
+  <!-- PHOTOS + COMMENTS -->
+  <div class="block section">
+    <span class="tag">Cộng đồng</span>
+    <h2>Ảnh từ cộng đồng</h2>
+    <div class="grid4"><div class="ph">Ảnh</div><div class="ph">Ảnh</div><div class="ph">Ảnh</div><div class="ph">Ảnh</div></div>
+    <div style="margin-top:10px"><span class="btn">+ Đăng ảnh (cần đăng nhập)</span></div>
+    <h2 style="margin-top:18px">Bình luận</h2>
+    <div class="ph" style="height:60px; justify-content:flex-start; align-items:flex-start; padding:10px">Đăng nhập để bình luận…</div>
+    <div class="comment"><strong>Minh</strong> <span class="muted">· 05/2026</span><div class="skel"></div><div class="skel s"></div></div>
+  </div>
+
+  <div class="note">⚠ Thông tin tham khảo — kiểm tra điều kiện thời tiết, giấy phép &amp; thuê porter/guide trước khi đi.
+    <span class="muted">Cập nhật lần cuối: 06/2026</span></div>
+</div>
+
+<footer><div class="wrap foot">
+  <span>© Vietnam Peaks</span><span>Dữ liệu bản đồ © OpenStreetMap contributors</span><span>VI / EN</span>
+</div></footer>

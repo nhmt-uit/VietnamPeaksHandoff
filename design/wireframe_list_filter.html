@@ -1,0 +1,160 @@
+<!-- Vietnam Peaks — Wireframe: danh sách đỉnh + bộ lọc (/nui) low-fidelity -->
+<style>
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+         color:#2b2b2b; background:#fafafa; line-height:1.5; }
+  .wrap { max-width:1080px; margin:0 auto; padding:0 16px; }
+  .block { position:relative; border:1px solid #d8d8d8; background:#fff; border-radius:8px; }
+  .tag { position:absolute; top:6px; right:8px; font-size:10px; letter-spacing:.08em;
+         text-transform:uppercase; color:#a9a9a9; background:#fff; padding:0 4px; }
+  .ph { background:repeating-linear-gradient(45deg,#f0f0f0,#f0f0f0 8px,#f6f6f6 8px,#f6f6f6 16px);
+        border:1px dashed #bcbcbc; border-radius:6px; display:flex; align-items:center;
+        justify-content:center; color:#8a8a8a; font-size:13px; }
+  .muted{ color:#888; } h1{ font-size:26px; margin:.2em 0; } h3{ font-size:13px; margin:0 0 8px;
+        text-transform:uppercase; letter-spacing:.05em; color:#777; }
+  .pill { display:inline-block; border:1px solid #cfcfcf; border-radius:999px; padding:2px 10px;
+          font-size:12px; margin:2px 4px 2px 0; color:#444; background:#fff; }
+  .pill.sel { background:#1f6f54; border-color:#1f6f54; color:#fff; }
+  .dots span{ display:inline-block; width:8px; height:8px; border-radius:50%; border:1px solid #777;
+        margin-right:2px; vertical-align:middle; } .dots .on{ background:#555; }
+  .btn{ border:1px solid #c2c2c2; border-radius:6px; padding:6px 12px; font-size:13px;
+        background:#fff; color:#333; cursor:pointer; }
+  .btn.active{ background:#eef3f0; border-color:#1f6f54; color:#1f6f54; }
+  nav{ background:#fff; border-bottom:1px solid #e2e2e2; }
+  .nav{ display:flex; align-items:center; gap:12px; padding:12px 0; }
+  .logo{ font-weight:700; } .search{ flex:1; } .search .ph{ height:34px; justify-content:flex-start; padding-left:12px; }
+  /* layout */
+  .head{ padding:18px 0 6px; }
+  .cols{ display:grid; grid-template-columns:260px 1fr; gap:18px; align-items:start; padding-bottom:24px; }
+  .side{ position:sticky; top:12px; padding:14px; }
+  .fgroup{ padding:12px 0; border-top:1px solid #eee; } .fgroup:first-of-type{ border-top:0; }
+  .check{ display:flex; align-items:center; gap:8px; font-size:14px; margin:5px 0; }
+  .box{ width:14px; height:14px; border:1px solid #aaa; border-radius:3px; display:inline-block; }
+  .box.on{ background:#1f6f54; border-color:#1f6f54; }
+  .selectph{ border:1px solid #ccc; border-radius:6px; padding:7px 10px; font-size:13px; color:#888;
+        display:flex; justify-content:space-between; }
+  .slider{ height:4px; background:#ddd; border-radius:3px; position:relative; margin:14px 4px 6px; }
+  .slider .fill{ position:absolute; left:18%; right:8%; top:0; bottom:0; background:#1f6f54; border-radius:3px; }
+  .slider .h{ position:absolute; top:-5px; width:14px; height:14px; border-radius:50%; background:#fff;
+        border:2px solid #1f6f54; } .slider .h1{ left:16%; } .slider .h2{ right:6%; }
+  /* results */
+  .rhead{ display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;
+        margin-bottom:12px; }
+  .chips .pill{ background:#eef3f0; border-color:#cfe0d8; color:#1f6f54; }
+  .grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+  .card{ overflow:hidden; } .card .thumb{ height:118px; border:0; border-radius:8px 8px 0 0; }
+  .card .body{ padding:10px 12px 12px; } .card .nm{ font-weight:600; }
+  .card .en{ font-size:12px; color:#999; } .card .meta{ margin-top:8px; }
+  .pager{ display:flex; gap:6px; justify-content:center; margin-top:18px; }
+  footer{ border-top:1px solid #e2e2e2; background:#fff; }
+  .foot{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; padding:16px 0;
+        font-size:12px; color:#8a8a8a; }
+  @media (max-width:760px){ .cols{grid-template-columns:1fr} .grid{grid-template-columns:repeat(2,1fr)} .side{position:static} }
+</style>
+
+<nav><div class="wrap nav">
+  <span class="logo">⛰ Vietnam Peaks</span>
+  <span class="search"><span class="ph">Tìm đỉnh núi…</span></span>
+  <span class="btn">VI / EN</span><span class="btn">Đăng nhập</span>
+</div></nav>
+
+<div class="wrap">
+  <div class="head"><h1>Đỉnh núi Việt Nam</h1>
+    <span class="muted">49 đỉnh — lọc theo vùng, tỉnh, độ cao, độ khó, trạng thái</span></div>
+
+  <div class="cols">
+    <!-- FILTER SIDEBAR -->
+    <div class="block side">
+      <span class="tag">Bộ lọc</span>
+      <div class="fgroup">
+        <h3>Tìm theo tên</h3>
+        <div class="selectph">Nhập tên đỉnh… <span>🔎</span></div>
+      </div>
+      <div class="fgroup">
+        <h3>Vùng</h3>
+        <div class="check"><span class="box on"></span> Miền Bắc</div>
+        <div class="check"><span class="box"></span> Miền Trung</div>
+        <div class="check"><span class="box"></span> Miền Nam</div>
+      </div>
+      <div class="fgroup">
+        <h3>Tỉnh</h3>
+        <div class="selectph">Chọn tỉnh (nhiều) <span>▾</span></div>
+      </div>
+      <div class="fgroup">
+        <h3>Độ cao (m)</h3>
+        <div class="slider"><div class="fill"></div><div class="h h1"></div><div class="h h2"></div></div>
+        <div class="muted" style="font-size:12px">800 m — 3.147 m</div>
+      </div>
+      <div class="fgroup">
+        <h3>Độ khó</h3>
+        <span class="pill">1</span><span class="pill">2</span>
+        <span class="pill sel">3</span><span class="pill sel">4</span><span class="pill sel">5</span>
+      </div>
+      <div class="fgroup">
+        <h3>Trạng thái</h3>
+        <div class="check"><span class="box on"></span> Leo được</div>
+        <div class="check"><span class="box"></span> Cần giấy phép</div>
+        <div class="check"><span class="box"></span> Hạn chế</div>
+        <div class="check"><span class="box"></span> Tạm đóng</div>
+      </div>
+      <div class="fgroup"><span class="btn" style="width:100%;text-align:center">Đặt lại bộ lọc</span></div>
+    </div>
+
+    <!-- RESULTS -->
+    <div>
+      <div class="rhead">
+        <div class="chips">
+          <strong>18 kết quả</strong> &nbsp;
+          <span class="pill">Miền Bắc ✕</span>
+          <span class="pill">Độ khó 3–5 ✕</span>
+          <span class="pill">≥ 800 m ✕</span>
+        </div>
+        <div>
+          <span class="btn active">Lưới</span><span class="btn">Bản đồ</span>
+          &nbsp; <span class="selectph" style="display:inline-flex">Sắp xếp: Độ cao ↓ ▾</span>
+        </div>
+      </div>
+
+      <div class="grid">
+        <!-- card mẫu -->
+        <div class="block card"><div class="ph thumb">Ảnh</div><div class="body">
+          <div class="nm">Fansipan</div><div class="en">Phan Xi Păng</div>
+          <div class="meta"><span class="pill">3.147 m</span><span class="pill">Lào Cai</span>
+            <span class="pill dots"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span></span></div></div></div>
+
+        <div class="block card"><div class="ph thumb">Ảnh</div><div class="body">
+          <div class="nm">Pu Si Lung</div><div class="en">Lai Châu</div>
+          <div class="meta"><span class="pill">3.083 m</span><span class="pill">Cần giấy phép</span>
+            <span class="pill dots"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span></span></div></div></div>
+
+        <div class="block card"><div class="ph thumb">Ảnh</div><div class="body">
+          <div class="nm">Tà Chì Nhù</div><div class="en">Lào Cai</div>
+          <div class="meta"><span class="pill">2.979 m</span><span class="pill">Leo được</span>
+            <span class="pill dots"><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span></span></span></div></div></div>
+
+        <div class="block card"><div class="ph thumb">Ảnh</div><div class="body">
+          <div class="nm">Tà Xùa</div><div class="en">Sơn La / Lào Cai</div>
+          <div class="meta"><span class="pill">2.865 m</span><span class="pill">Leo được</span>
+            <span class="pill dots"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span></span></div></div></div>
+
+        <div class="block card"><div class="ph thumb">Ảnh</div><div class="body">
+          <div class="nm">Lảo Thẩn</div><div class="en">Lào Cai</div>
+          <div class="meta"><span class="pill">2.862 m</span><span class="pill">Leo được</span>
+            <span class="pill dots"><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span></span></span></div></div></div>
+
+        <div class="block card"><div class="ph thumb">Ảnh</div><div class="body">
+          <div class="nm">Chung Nhía Vũ</div><div class="en">Lai Châu</div>
+          <div class="meta"><span class="pill">2.918 m</span><span class="pill">Tạm đóng</span>
+            <span class="pill dots"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span></span></div></div></div>
+      </div>
+
+      <div class="pager"><span class="btn">‹</span><span class="btn active">1</span>
+        <span class="btn">2</span><span class="btn">3</span><span class="btn">›</span></div>
+    </div>
+  </div>
+</div>
+
+<footer><div class="wrap foot">
+  <span>© Vietnam Peaks</span>
+  <span>Dữ liệu bản đồ © OpenStreetMap contributors</span><span>VI / EN</span>
+</div></footer>
