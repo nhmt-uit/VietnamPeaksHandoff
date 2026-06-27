@@ -9,9 +9,18 @@ import { PeakCard } from "@/components/peaks/PeakCard";
 import { Pagination } from "@/components/peaks/Pagination";
 import { buildQuery, PAGE_SIZE, parseFilters, SORTS } from "@/components/peaks/filters";
 
-export const metadata: Metadata = {
-  title: "Đỉnh núi Việt Nam — Vietnam Peaks",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "Meta" });
+  return {
+    title: t("mountainsTitle"),
+    description: t("mountainsDescription"),
+  };
+}
 
 type SearchParams = Record<string, string | string[] | undefined>;
 
@@ -54,12 +63,7 @@ export default async function PeaksPage({
     <div className="mx-auto max-w-6xl px-4 py-8">
       {/* Header trang */}
       <header className="mb-6">
-        <Link href="/" className="text-sm font-medium text-forest-700 hover:underline">
-          ⛰ Vietnam Peaks
-        </Link>
-        <h1 className="mt-2 font-display text-3xl font-semibold text-forest-900">
-          {t("pageTitle")}
-        </h1>
+        <h1 className="font-display text-3xl font-semibold text-forest-900">{t("pageTitle")}</h1>
         <p className="mt-1 text-sm text-rock-600">{t("pageSubtitle", { count: total })}</p>
       </header>
 
@@ -114,10 +118,6 @@ export default async function PeaksPage({
           <Pagination state={{ ...state, page }} totalPages={totalPages} />
         </section>
       </div>
-
-      <footer className="mt-10 border-t border-border pt-4 text-xs text-rock-600">
-        © Vietnam Peaks · {t("osmCredit")}
-      </footer>
     </div>
   );
 }

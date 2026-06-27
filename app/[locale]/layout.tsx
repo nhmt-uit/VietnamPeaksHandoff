@@ -1,15 +1,26 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing, type Locale } from "@/i18n/routing";
+import { SiteFooter } from "@/components/site/SiteFooter";
+import { SiteHeader } from "@/components/site/SiteHeader";
 import { display, sans } from "../fonts";
 import "../globals.css";
 
-export const metadata: Metadata = {
-  title: "Vietnam Peaks",
-  description: "Cẩm nang leo núi Việt Nam — có cấu trúc, lọc được, song ngữ.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "Meta" });
+  return {
+    // `default` cho trang không tự đặt title; `template` bọc title của trang con.
+    title: { default: t("siteTitleDefault"), template: `%s · ${t("siteName")}` },
+    description: t("siteDescription"),
+  };
+}
 
 // Render tĩnh cả 2 locale (SSG).
 export function generateStaticParams() {
@@ -33,7 +44,13 @@ export default async function LocaleLayout({
     <html lang={locale} className={`${display.variable} ${sans.variable}`}>
       <body>
         {/* Provider tự kế thừa locale + messages từ i18n/request.ts */}
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <NextIntlClientProvider>
+          <div className="flex min-h-screen flex-col">
+            <SiteHeader locale={locale as Locale} />
+            <main className="flex-1">{children}</main>
+            <SiteFooter />
+          </div>
+        </NextIntlClientProvider>
       </body>
     </html>
   );
